@@ -1,0 +1,16 @@
+.header-title {
+  margin-bottom: 8px;
+}
+.site-title {
+    font-size:2em;
+}
+a.site-title {
+  text-decoration: none
+}
+
+h1 {
+  font-size:1.6em;
+}
+h2 {
+  font-size:1.2em;
+}
