@@ -3,6 +3,7 @@ layout: post
 title: My Life of Programming
 date: 2006-01-01
 author: 张云霄
+tags: "电脑高手"
 ---
 （初中时写的，今天突然找到了这篇文章，遂拉出来晒晒）
 
