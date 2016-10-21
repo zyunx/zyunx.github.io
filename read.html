@@ -1,0 +1,22 @@
+---
+layout: default
+title: read
+permalink: /read/
+---
+
+<div class="home">
+
+  <h1 class="page-heading">阅读</h1>
+
+  <ul class="post-list">
+    {% for post in site.categories.read %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
