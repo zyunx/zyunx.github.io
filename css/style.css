@@ -1,10 +1,30 @@
 * {
- font-family:STKaiti;
+}
+
+body {
+  font-family:STKaiti;
+  font-size:16px;
+}
+
+table {
+  border-collapse:collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
 }
 
 .header-title {
   margin-bottom: 8px;
 }
+
+.footer {
+  margin: 4em 0 0 0;
+  padding: 1em;
+  text-align: center;
+}
+
 .site-title {
     font-size:2em;
 }
@@ -26,5 +46,9 @@ h3 {
 .page-li {
     display: inline;
     padding: 0.2em;
+}
+
+.post {
+  width:40em;
 }
 
