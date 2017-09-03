@@ -86,7 +86,7 @@ Linux系统我推荐使用Debian发行版。
 
 请读我的另一篇博客。
 
-[图解使用VirtualBox创建Debian系统](/2017/08/02/setup-debian-using-virtualbox.html)
+[图解使用VirtualBox创建Debian系统](/2017/09/02/setup-debian-using-virtualbox.html)
 
 ### 使用SSH访问虚拟Linux系统
 
