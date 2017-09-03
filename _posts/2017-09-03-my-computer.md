@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "我使用Linux，OS X，Windows系统的一种方式"
-date: 2017-08-03
+date: 2017-09-03
 author: "张云霄"
 ---
 
