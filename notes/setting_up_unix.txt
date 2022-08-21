@@ -1,0 +1,26 @@
+
+SETTING UP UNIX
+===============
+
+PDP11 emulator:
+https://github.com/simh/simh
+
+Making a Disk From Tape
+=======================
+
+V6 tape: 
+https://www.tuhs.org/Archive/Distributions/Research/Ken_Wellsch_v6/v6.tape.gz
+
+
+TU10
+012700 = MOV (PC)+, R0
+172526
+010040 = MOV R0, -(R0)
+012740 = MOV (PC)+, -(R0)
+060003 = 
+000777 = BR .
+
+
+https://minnie.tuhs.org/pipermail/tuhs/2015-December/007939.html
+
+
