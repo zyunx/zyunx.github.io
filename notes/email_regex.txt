@@ -1,0 +1,10 @@
+Email Regular Expression
+========================
+
+for email input validation, I prefer
+
+^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$
+
+Reference
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+https://stackoverflow.com/questions/201323/how-can-i-validate-an-email-address-using-a-regular-expression
