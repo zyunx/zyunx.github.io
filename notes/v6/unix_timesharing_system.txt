@@ -1,0 +1,21 @@
+3. The File System
+
+3.1 Ordinary files
+
+3.2 Directories
+    Directories provide the mapping between the names of files and the files 
+    themselves, and thus induce a structure on the file system as a whole.
+    A directory behaves exactly like an ordinary file except that it cannot be
+    written on by unprivileged programs, so that the system controls the contents 
+    of directories.
+
+3.3 Special files
+    block and char files
+
+3.4 Removable file systems
+    mount, mkfs
+
+3.5 Projection
+    rwx and s(set user id)
+    The set-user-ID feature provides for privileged programs which may use 
+    files inaccessible to other users.
