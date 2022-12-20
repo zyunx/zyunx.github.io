@@ -1,0 +1,14 @@
+
+PDP11 CPU cycles
+* bus cycles
+* instruction cycles, it contains more than one bus cycles.
+
+in order to perform a bus cycle, it must first request the bus.
+two method to request bus
+
+NPR
+1. for data transaction(DMA)
+2. honnered between bus cycles
+3. no CPU intervention
+
+BR for interrupts, honor it after instruction cycle.

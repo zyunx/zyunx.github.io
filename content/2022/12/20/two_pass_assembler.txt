@@ -1,0 +1,10 @@
+
+WHAT IS A SINGLE PASS ASSEMBLER?
+It is an assembler that generally generates the object code directly in memory for immediate execution. 
+It parses through your source code only once and you are done. 
+
+Now let us see how a two pass assembler works. Simple, while on its way, if the assembler encounters 
+an undefined label, it puts it into a symbol table along with the address where the undefined symbol’s value 
+has to be placed when the symbol is found in future
+
+https://www.entcengg.com/two-pass-assemblers/
