@@ -1,0 +1,115 @@
+============
+PDP11 System
+============
+
+workbook:
+http://www.bitsavers.org/pdf/dec/pdp11/Introduction_to_the_PDP-11_Student_Workbook_Apr77/
+
+video course:
+https://www.youtube.com/watch?v=0kz0i3ANHZY&list=PLWgt3n8uQhm35OH13EuIbDO5LxGHZfVZB
+
+Basic computer elements
+=======================
+
+* processor
+    1. perform calculation
+    2. move data between other two elements
+* memory
+* I/O
+    communication between man and machine.
+
+
+Tradictional 
+------------
+
+<------Memory Bus ----> Processor <----- IO Bus ---->
+   ^                                              ^
+   |                                              |
+   v                                              v
+Memory                                           I/O
+   ^                                              ^
+   |                                              |
+   v                                              v
+<------------------------ DMA Bus ------------------->
+
+
+PDP11
+-----
+
+<--------------------- UniBus --------------------->
+   ^               ^                            ^
+   |               |                            |
+   v               v                            v
+Processor        Memory                        I/O
+
+
+
+UniBus
+======
+
+Bus communication
+-----------------
+
+* master-slave
+* dynamic
+* interlocked
+
+Use of bus
+----------
+
+* interrupts: I/O device interrupts CPU to do something more important
+* data transaction: I/O device transfter data from or to memory without CPU intervention
+* bus cycle: smallest task pdp11 system can perform, only one byte or word can transfer during a bus cycle.
+
+Instruction cycle contains one or more these bus cycles.
+1. fetch instruction
+2. get operand address
+3. get operand
+4. execute instruction and store result
+
+Request bus control
+-------------------
+
+NPR: used for data transactions, can be possible between bus cycles.
+
+BR: used for interrupts, can be possible between instruction cycles.
+
+Honoring BR
+BR
+BG
+SACK
+
+Honoring NPR
+NPR
+NPG
+SACK
+
+Assert bus control
+BBSY
+
+Interrupt
+---------
+
+CPU                  I/O
+
+  |<------ BR --------|
+  |------- BG ------->|
+  |<------ SACK ------|
+  |                   |
+  |<------ BBSY ------|
+  |<------ INTR ------|
+  |<- vector address -|
+  |------- SSYN ----->|
+
+
+Data transaction
+----------------
+
+I/O                  Memory
+ |
+ | ----- BBSY --------> |
+ | ---- address ------> |
+ | ---- DATAO --------> |
+ | ----- data --------> |
+ | ------ MSYN -------> |
+ | <------ SSYN ------- |
