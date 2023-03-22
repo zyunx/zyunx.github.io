@@ -1,0 +1,75 @@
+To demo the stack pointer, SP or r6, is the only special reg- ister which is replicated for each mode
+
+PS register is at 777776 (177776)
+
+Memory management
+
+notes: number in octal format
+
+/ Prove there are separate sp for kernel and user mode
+
+SSR0 = 177572
+KISA0 = 172340
+KISD0 = 172300
+UISA0 = 177640
+UISD0 = 177600
+PS = 177776
+
+IO = 7600
+
+
+        bit     $1, SSR0
+        bne     start
+
+/ memory management is disabled
+
+/ setup page mapping so that it's equivalent
+/ as basic memory management
+
+        mov     $KISA0, r0
+        mov     $KISD0, r1
+        clr     r2
+        mov     $7, r3
+        mov     $200, r4
+        mov     $77406, r5
+1:
+        mov     r2, (r0)+
+        mov     r5, (r1)+
+        add     r4, r2
+        sob     r3, 1b
+
+        mov     $IO, (r0)+
+        mov     r5, (r1)+
+
+/ setup user page mapping 
+
+        mov     $UISA0, r0
+        mov     $UISD0, r1
+        clr     r2
+        mov     $7, r3
+        mov     $200, r4
+        mov     $77406, r5
+1:
+        mov     r2, (r0)+
+        mov     r5, (r1)+
+        add     r4, r2
+        sob     r3, 1b
+        / setup 8th user page
+        mov     $0, (r1)+
+
+/ enable memory management
+
+        inc     SSR0
+
+/ Demo
+        / in kernel mode
+        mov     $1200, sp
+        / switch to user mode
+        bis     $140000, PS
+
+/ check sp value is not $1200
+/ if you use simh-pdp11, you can use command "e SP" to check it.
+
+
+Further question:
+1. How to reenter into kernel mode from user mode to check kernel SP value?
