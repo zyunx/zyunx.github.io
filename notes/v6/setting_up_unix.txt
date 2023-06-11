@@ -24,3 +24,17 @@ TU10
 https://minnie.tuhs.org/pipermail/tuhs/2015-December/007939.html
 
 
+Boot UNIX
+
+RK05
+012700 = MOV (PC)+, R0 or MOV #177414, R0
+177414
+005040 = CLR -(R0)      /* disk address */
+005040 = CLR -(R0)      /* current bus addr */
+010040 = MOV R0, -(R0)  /* mov #177410, (#177406) word count */
+012740 = MOV (PC)+, -(R0)   /* mov #05, (#177404) control status */
+000005
+105710 = TSTB (R0)
+002376 = BGE -2
+005007 = CLR PC
+
