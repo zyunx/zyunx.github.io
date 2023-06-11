@@ -13,12 +13,12 @@ https://www.tuhs.org/Archive/Distributions/Research/Ken_Wellsch_v6/v6.tape.gz
 
 
 TU10
-012700 = MOV (PC)+, R0
+012700 = MOV (PC)+, R0 or MOV #172526, R0
 172526
-010040 = MOV R0, -(R0)
-012740 = MOV (PC)+, -(R0)
+010040 = MOV R0, -(R0)                                  /* R0 bytes count */
+012740 = MOV (PC)+, -(R0) or MOV #060003, R0            /* read command, see PDP11 peripheral handbook */
 060003 = 
-000777 = BR .
+000777 = BR -1
 
 
 https://minnie.tuhs.org/pipermail/tuhs/2015-December/007939.html
